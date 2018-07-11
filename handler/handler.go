@@ -11,6 +11,7 @@ import (
 
 var Blockchain []model.Block
 
+//Handler for get block
 func HandleGetBlockchain(w http.ResponseWriter, r *http.Request) {
 	bytes, err := json.MarshalIndent(Blockchain, "", "  ")
 	if err != nil {
@@ -20,6 +21,7 @@ func HandleGetBlockchain(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, string(bytes))
 }
 
+//Handler for writing a block
 func HandleWriteBlock(w http.ResponseWriter, r *http.Request) {
 	var m model.Message
 
