@@ -40,7 +40,7 @@ func GenerateBlock(oldBlock model.Block, BPM int) (model.Block, error) {
 	newBlock.Timestamp = t.String()
 	newBlock.BPM = BPM
 	newBlock.PrevHash = oldBlock.Hash
-	newBlock.Hash = calculateHash(newBlock)
+	newBlock.Hash = CalculateHash(newBlock)
 
 	return newBlock, nil
 }
